@@ -1,8 +1,6 @@
 public class Punkt
 	{
-		double x;
-		private double y;
-		private double z;
+		double x, y, z;
 		
 		public Punkt(double x, double y, double z)
 		{
@@ -49,6 +47,6 @@ public class Punkt
 		
 		@Override
 	    public String toString(){
-	        return "Koordynaty punktów: ["+x+","+y+","+z+"]";
+	        return "Koordynaty punktÃ³w: ["+x+","+y+","+z+"]";
 	    }
 	}
