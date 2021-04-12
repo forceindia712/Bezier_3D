@@ -9,8 +9,8 @@ public class Bezier_3D{
 	public Bezier_3D() throws IOException {
 	}
 
-	File wczytaj = new File("C:\\Users\\Albert\\Desktop\\kubek.txt");
-	File zapisz = new File("C:\\Users\\Albert\\Desktop\\kubek1.txt");
+	File wczytaj = new File("C:\\Users\\Albert\\Desktop\\czajnik.txt");
+	File zapisz = new File("C:\\Users\\Albert\\Desktop\\czajnik1.txt");
 		
 	Scanner scanner = new Scanner(wczytaj);
 	BufferedWriter plik = new BufferedWriter(new FileWriter(zapisz));
@@ -28,7 +28,7 @@ public class Bezier_3D{
                     double tempx = Double.parseDouble(scanner.next());
                     double tempy = Double.parseDouble(scanner.next());
                     double tempz = Double.parseDouble(scanner.next());
-                    Punkty[i][j] = new Punkt(tempx,tempy,tempz);
+                    Punkty[k][j] = new Punkt(tempx,tempy,tempz);
                 }
             }
 
@@ -39,9 +39,9 @@ public class Bezier_3D{
                     z=0.0;
                     for (int k=0;k<4;k++){
                         for(int j=0; j<4 ;j++){
-                            x += Punkty[i][j].getX() * Punkt.berstein(3,i,w) * Punkt.berstein(3,j,v);
-                            y += Punkty[i][j].getY() * Punkt.berstein(3,i,w) * Punkt.berstein(3,j,v);
-                            z += Punkty[i][j].getZ() * Punkt.berstein(3,i,w) * Punkt.berstein(3,j,v);
+                            x += Punkty[k][j].x * Punkt.berstein(3,k,w) * Punkt.berstein(3,j,v);
+                            y += Punkty[k][j].y * Punkt.berstein(3,k,w) * Punkt.berstein(3,j,v);
+                            z += Punkty[k][j].z * Punkt.berstein(3,k,w) * Punkt.berstein(3,j,v);
                         }
                     }
                     plik.write(x+","+y+","+z+System.lineSeparator());
