@@ -8,9 +8,9 @@ public class Bezier_3D{
 
 	public Bezier_3D() throws IOException {
 	}
-
-	File wczytaj = new File("C:\\Users\\Albert\\Desktop\\czajnik.txt");
-	File zapisz = new File("C:\\Users\\Albert\\Desktop\\czajnik1.txt");
+	//wczytanie punktów kontrolnym
+	File wczytaj = new File("C:\\Users\\Albert\\Desktop\\lyzka.txt");
+	File zapisz = new File("C:\\Users\\Albert\\Desktop\\lyzka1.txt");
 		
 	Scanner scanner = new Scanner(wczytaj);
 	BufferedWriter plik = new BufferedWriter(new FileWriter(zapisz));
@@ -22,6 +22,7 @@ public class Bezier_3D{
         int ilosc = scanner.nextInt();
 
         plik.write("x, y, z"+System.lineSeparator());
+        //wpisanie punktów kontrolnych do macierzy
         for(int i=0;i<ilosc;i++){
             for(int k=0;k<4;k++){
                 for(int j=0;j<4;j++){
@@ -32,6 +33,7 @@ public class Bezier_3D{
                 }
             }
 
+            //tworzenie punktów tworzących płaty
             for(double v=0.0;v<=1.0;v+=0.01) {
                 for(double w=0.0;w<=1.0;w+=0.01){
                     x=0.0;
